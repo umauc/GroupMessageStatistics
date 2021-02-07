@@ -2,7 +2,7 @@ import datetime as datetime
 import pickle
 from os import path
 import os
-from typing import BinaryIO, List, NoReturn
+from typing import List, NoReturn
 
 from graia.application import Source
 
@@ -23,10 +23,9 @@ class Record(object):
 
     @staticmethod
     def getAMemberMessageList(msglist: List[ChatRecord], qid: int) -> list:
-        temp_list = []
         for i in msglist:
-            if i.member.id == qid:
-                temp_list.append(i)
+            if i.member.id != qid:
+                msglist.remove(i)
         return msglist
 
     @classmethod

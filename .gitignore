@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 
 .data/chatRecord.dat
+/summaryGraphCache.png
+/wordCloudCache.png
